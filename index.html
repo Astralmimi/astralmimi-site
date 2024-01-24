@@ -1,0 +1,23 @@
+---
+og_image: /assets/preview.png
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% include head.html %}
+</head>
+<body>
+	<!--
+		{% include header.html %}
+	-->
+
+	<main class="container">
+		<div class="row">
+			{% include person-main.html %}
+			{% include person-links.html og_image = page.og_image %}
+		</div>
+	</main>
+
+	{% include footer.html %}
+</body>
+</html>
