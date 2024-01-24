@@ -1,6 +1,5 @@
 ---
 og_image: /assets/preview.png
-icon: /assets/favicon.png
 ---
 
 <!DOCTYPE html>
@@ -13,21 +12,23 @@ icon: /assets/favicon.png
 
 	<main class="container">
 		<section class="grid">
-			{% include main.html %}
+			{% include portrait.html %}
 			{% include links.html %}
 		</section>
 		<article>
-			<header><h3>My Creations</h3></header>
-			<main style="overflow-x: auto;">
-				<div style="display: flex; width: max-content; column-gap: 16px; margin-bottom: 10px;">
-					{% for post in site.posts %}
-						<div class="showcase border grid">
-							<a href="{{post.url}}">
-								<span>{{post.title}}</span>
-							</a>
-						</div>
-					{% endfor %}
-				</div>
+			<header><h3>My Creations & Works</h3></header>
+			<main style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px;">
+				{% for post in site.posts %}
+					<div class="showcase border grid">
+						{% if post.is_page != false %}
+						<a href="{{post.url}}">
+							<h3>{{post.title}}</h3>
+						</a>
+						{% else %}
+						<h3>{{post.title}}</h3>
+						{% endif %}
+					</div>
+				{% endfor %}
 			</main>
 		</article>
 	</main>

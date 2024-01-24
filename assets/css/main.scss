@@ -13,6 +13,11 @@ button, a[role=button] {
 	margin: 5px 2.5px;
 }
 
+.big-button {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
 a {
 	word-break: keep-all;
 	overflow-wrap: normal;
@@ -46,11 +51,6 @@ footer {
 	font-size: 0.8rem;
 }
 
-.big-button {
-	font-size: 1.5rem;
-	font-weight: 700;
-}
-
 .border {
 	border: solid 5px var(--mars-color-border);
 	border-radius: var(--pico-border-radius);
@@ -63,16 +63,20 @@ footer {
 	flex-shrink: 0;
 }
 
+.showcase:hover {
+	background-color: var(--mars-color-header);
+}
+
 /* Custom color for light color scheme (Default) */
 /* Can be forced with data-theme="light" */
 [data-theme=light], :root:not([data-theme=dark]) {
-	--mars-color-text: #a05d5d;
-	--mars-color-interactable: #ea7e7e;
-	--mars-color-highlight: #f7adad;
-	--mars-color-secondary: rgb(183, 138, 138);
-	--mars-color-background: #ffffff;
-	--mars-color-card: #ffffff;
-	--mars-color-header: rgb(236, 220, 220);
+	--mars-color-text: #911091;
+	--mars-color-interactable: #911091;
+	--mars-color-highlight: #f379f3;
+	--mars-color-secondary: #f379f3;
+	--mars-color-background: #f3cbf3;
+	--mars-color-card: #f3cbf3;
+	--mars-color-header: #f3a3f3;
 	--mars-color-border: var(--mars-color-secondary);
 
 	--pico-color: var(--mars-color-text);
@@ -114,7 +118,7 @@ footer {
 		--mars-color-interactable: #ba12ba;
 		--mars-color-highlight: #f379f3;
 		--mars-color-secondary: #9e379e;
-		--mars-color-secondary-highlight: #423434;
+		--mars-color-secondary-highlight: #cb54cb;
 		--mars-color-background: #800080;
 		--mars-color-card: #700170;
 		--mars-color-header: #5e0d5e;
@@ -155,14 +159,14 @@ footer {
 /* Custom color for dark color scheme (Forced) */
 /* Enabled if forced with data-theme="dark" */
 [data-theme=dark] {
-	--mars-color-text: #e7c0c0;
-	--mars-color-interactable: #bc6666;
-	--mars-color-highlight: #f7adad;
-	--mars-color-secondary: #372626;
-	--mars-color-secondary-highlight: #543f3f;
-	--mars-color-background: purple;
+	--mars-color-text: #f3cbf3;
+	--mars-color-interactable: #ba12ba;
+	--mars-color-highlight: #f379f3;
+	--mars-color-secondary: #9e379e;
+	--mars-color-secondary-highlight: #423434;
+	--mars-color-background: #800080;
 	--mars-color-card: #700170;
-	--mars-color-header: #271c1c;
+	--mars-color-header: #5e0d5e;
 	--mars-color-border: var(--mars-color-secondary);
 
 	--pico-color: var(--mars-color-text);

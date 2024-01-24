@@ -8,21 +8,12 @@ og_image: /assets/preview.png
 	{% include head.html og_image = page.og_image %}
 </head>
 <body style="text-align: center;">
-	<!--{% include header.html %}-->
+	{% include header.html %}
 
 	<main class="container">
 		<article>
 			<header><h1>{{page.title}}</h1></header>
-			<main style="overflow-x: auto;">
-				<div style="display: flex; width: max-content; column-gap: 16px; margin-bottom: 10px;">
-					{% for post in site.posts %}
-						<div class="showcase border grid">
-							<a href="{{post.url}}">
-								<span>{{post.title}}</span>
-							</a>
-						</div>
-					{% endfor %}
-				</div>
+			<main>
 			</main>
 		</article>
 	</main>

@@ -27,6 +27,9 @@ url: "https://astralmimi.art" # the base hostname & protocol for your site, e.g.
 # twitter_username: jekyllrb
 # github_username:  jekyll
 
+icon: /assets/favicon.png
+og_image: /assets/preview.png
+
 # Build settings
 # theme: minima
 plugins:
