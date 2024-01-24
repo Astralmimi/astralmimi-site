@@ -67,6 +67,13 @@ footer {
 	background-color: var(--mars-color-header);
 }
 
+.grid-column-responsive { grid-template-columns: 1fr; }
+@media (min-width: 576px) { .grid-column-responsive { grid-template-columns: 1fr; } }
+@media (min-width: 768px) { .grid-column-responsive { grid-template-columns: 1fr; } }
+@media (min-width: 1024px) { .grid-column-responsive { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1280px) { .grid-column-responsive { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1536px) { .grid-column-responsive { grid-template-columns: 1fr 1fr 1fr; } }
+
 /* Custom color for light color scheme (Default) */
 /* Can be forced with data-theme="light" */
 [data-theme=light], :root:not([data-theme=dark]) {

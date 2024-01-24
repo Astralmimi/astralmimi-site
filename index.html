@@ -17,7 +17,7 @@ og_image: /assets/preview.png
 		</section>
 		<article>
 			<header><h3>My Creations & Works</h3></header>
-			<main style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px;">
+			<main class="grid grid-column-responsive" style="gap: 10px; margin: auto; width: fit-content; margin: auto;">
 				{% for post in site.posts %}
 					<div class="showcase border grid">
 						{% if post.is_page != false %}
@@ -30,6 +30,7 @@ og_image: /assets/preview.png
 					</div>
 				{% endfor %}
 			</main>
+
 		</article>
 	</main>
 
