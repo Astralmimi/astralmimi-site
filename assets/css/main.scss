@@ -1,24 +1,197 @@
 ---
 ---
 
-* {
-	color: white;
+:root {
+	--pico-border-radius: 0.6rem;
 }
 
-body {
-	background-color: purple;
-	color: white;
+img {
+	object-fit: cover;
+}
+
+button, a[role=button] {
+	margin: 5px 2.5px;
 }
 
 a {
-	color: lightblue;
+	word-break: keep-all;
+	overflow-wrap: normal;
 }
 
 .card {
-	margin: auto;
+	padding: auto;
 }
 
-footer.container {
-	margin-top: 100px;
-	text-align: center;
+.link-row {
+	margin: auto;
+	margin-bottom: 30px;
+}
+
+.avatar-card {
+	border: 5px solid var(--mars-color-border);
+	border-radius: var(--pico-border-radius);
+	width: fit-content;
+	padding: 5px;
+}
+
+.avatar-card:hover {
+	background-color: var(--mars-color-header);
+}
+
+header.container {
+	padding: 0;
+}
+
+footer {
+	font-size: 0.8rem;
+}
+
+.big-button {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.border {
+	border: solid 5px var(--mars-color-border);
+	border-radius: var(--pico-border-radius);
+	padding: 10px;
+}
+
+.showcase {
+	width: 400px;
+	height: 500px;
+	flex-shrink: 0;
+}
+
+/* Custom color for light color scheme (Default) */
+/* Can be forced with data-theme="light" */
+[data-theme=light], :root:not([data-theme=dark]) {
+	--mars-color-text: #a05d5d;
+	--mars-color-interactable: #ea7e7e;
+	--mars-color-highlight: #f7adad;
+	--mars-color-secondary: rgb(183, 138, 138);
+	--mars-color-background: #ffffff;
+	--mars-color-card: #ffffff;
+	--mars-color-header: rgb(236, 220, 220);
+	--mars-color-border: var(--mars-color-secondary);
+
+	--pico-color: var(--mars-color-text);
+	--pico-h1-color: var(--mars-color-text);
+	--pico-h2-color: var(--mars-color-text);
+	--pico-h3-color: var(--mars-color-text);
+	--pico-h4-color: var(--mars-color-text);
+	--pico-h5-color: var(--mars-color-text);
+	--pico-h6-color: var(--mars-color-text);
+
+	--pico-background-color: var(--mars-color-background);
+	--pico-card-background-color: var(--mars-color-card);
+	--pico-card-sectioning-background-color: var(--mars-color-header);
+	--pico-text-selection-color: var(--mars-color-secondary);
+
+	--pico-primary: var(--mars-color-text);
+	--pico-primary-background: var(--mars-color-interactable);
+	--pico-primary-underline: var(--mars-color-border);
+	--pico-primary-hover: var(--mars-color-highlight);
+	--pico-primary-hover-background: var(--mars-color-highlight);
+	--pico-primary-focus: var(--mars-color-text);
+	--pico-primary-inverse: #fff;
+
+	--pico-secondary: var(--mars-color-text);
+	--pico-secondary-background: var(--mars-color-secondary);
+	--pico-secondary-underline: var(--mars-color-border);
+	--pico-secondary-hover: var(--mars-color-highlight);
+	--pico-secondary-hover-background: var(--mars-color-header);
+	--pico-primary-focus: var(--mars-color-text);
+
+	--pico-primary-inverse: #fff;
+}
+
+/* Custom color for dark color scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+	:root:not([data-theme]) {
+		--mars-color-text: #f3cbf3;
+		--mars-color-interactable: #ba12ba;
+		--mars-color-highlight: #f379f3;
+		--mars-color-secondary: #9e379e;
+		--mars-color-secondary-highlight: #423434;
+		--mars-color-background: #800080;
+		--mars-color-card: #700170;
+		--mars-color-header: #5e0d5e;
+		--mars-color-border: var(--mars-color-secondary);
+
+		--pico-color: var(--mars-color-text);
+		--pico-h1-color: var(--mars-color-text);
+		--pico-h2-color: var(--mars-color-text);
+		--pico-h3-color: var(--mars-color-text);
+		--pico-h4-color: var(--mars-color-text);
+		--pico-h5-color: var(--mars-color-text);
+		--pico-h6-color: var(--mars-color-text);
+
+		--pico-background-color: var(--mars-color-background);
+		--pico-card-background-color: var(--mars-color-card);
+		--pico-card-sectioning-background-color: var(--mars-color-header);
+		--pico-text-selection-color: var(--mars-color-secondary);
+
+		--pico-primary: var(--mars-color-text);
+		--pico-primary-background: var(--mars-color-interactable);
+		--pico-primary-underline: var(--mars-color-border);
+		--pico-primary-hover: var(--mars-color-highlight);
+		--pico-primary-hover-background: var(--mars-color-highlight);
+		--pico-primary-focus: var(--mars-color-text);
+		--pico-primary-inverse: #fff;
+
+		--pico-secondary: var(--mars-color-text);
+		--pico-secondary-background: var(--mars-color-secondary);
+		--pico-secondary-underline: var(--mars-color-border);
+		--pico-secondary-hover: var(--mars-color-highlight);
+		--pico-secondary-hover-background: var(--mars-color-secondary-highlight);
+		--pico-primary-focus: var(--mars-color-text);
+
+		--pico-primary-inverse: #fff;
+	}
+}
+
+/* Custom color for dark color scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */
+[data-theme=dark] {
+	--mars-color-text: #e7c0c0;
+	--mars-color-interactable: #bc6666;
+	--mars-color-highlight: #f7adad;
+	--mars-color-secondary: #372626;
+	--mars-color-secondary-highlight: #543f3f;
+	--mars-color-background: purple;
+	--mars-color-card: #700170;
+	--mars-color-header: #271c1c;
+	--mars-color-border: var(--mars-color-secondary);
+
+	--pico-color: var(--mars-color-text);
+	--pico-h1-color: var(--mars-color-text);
+	--pico-h2-color: var(--mars-color-text);
+	--pico-h3-color: var(--mars-color-text);
+	--pico-h4-color: var(--mars-color-text);
+	--pico-h5-color: var(--mars-color-text);
+	--pico-h6-color: var(--mars-color-text);
+
+	--pico-background-color: var(--mars-color-background);
+	--pico-card-background-color: var(--mars-color-card);
+	--pico-card-sectioning-background-color: var(--mars-color-header);
+	--pico-text-selection-color: var(--mars-color-secondary);
+
+	--pico-primary: var(--mars-color-text);
+	--pico-primary-background: var(--mars-color-interactable);
+	--pico-primary-underline: var(--mars-color-border);
+	--pico-primary-hover: var(--mars-color-highlight);
+	--pico-primary-hover-background: var(--mars-color-highlight);
+	--pico-primary-focus: var(--mars-color-text);
+	--pico-primary-inverse: #fff;
+
+	--pico-secondary: var(--mars-color-text);
+	--pico-secondary-background: var(--mars-color-secondary);
+	--pico-secondary-underline: var(--mars-color-border);
+	--pico-secondary-hover: var(--mars-color-highlight);
+	--pico-secondary-hover-background: var(--mars-color-secondary-highlight);
+	--pico-primary-focus: var(--mars-color-text);
+
+	--pico-primary-inverse: #fff;
 }
