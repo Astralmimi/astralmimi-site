@@ -1,5 +1,5 @@
 <header class="container">
 	<nav>
-		<a role="button" class="secondary" href="{{ '/index.html' | relative_url }}">Home</a>
+		{% if page.is_home == nil %}<a role="button" class="secondary" href="{{ '/index.html' | relative_url }}">Home</a>{% endif %}
 	</nav>
 </header>

@@ -1,5 +1,5 @@
 ---
-og_image: /assets/preview.png
+is_home: true
 ---
 
 <!DOCTYPE html>
@@ -8,12 +8,41 @@ og_image: /assets/preview.png
 	{% include head.html %}
 </head>
 <body style="text-align: center;">
-	<!--{% include header.html %}-->
+	{% include header.html %}
 
 	<main class="container">
 		<section class="grid">
-			{% include portrait.html %}
-			{% include links.html %}
+			<div class="card border">
+				<div>
+					<img src="{{ '/assets/img/portrait.png' | relative_url }}" style="height: 480px;">
+					<h1>Hi, I'm Astralmimi</h1>
+					<p>VR asset creator Artist</p>
+					<p>ConFuzzled VR Portal Design Coordinator</p>
+					<p>Space Chicken</p>
+				</div>
+			</div>
+			<div class="card" style="display: flex; flex-direction: column; gap: 40px; margin: auto; justify-content: space-evenly; height: 100%; padding: 30px 0;">
+				<div>
+					<h3>Buy my awesome stuff!</h3>
+					<div>
+						<a role="button" class="big-button" href="https://astralmimi.gumroad.com">Gumroad</a>
+					</div>
+				</div>
+				<div>
+					<h3>Commissions</h3>
+					<p>
+						I do avatar retextures for as little as $1,000,000!<br>
+						Check my socials to see when i open!
+					</p>
+				</div>
+				<div>
+					<h3>My Socials</h3>
+					<div>
+						<a role="button" class="outline" href="https://bsky.app/profile/astralmimi.art">Bluesky</a>
+						<a role="button" class="outline" href="https://mastodon.social/@Jellybeanyeen">Mastodon</a>
+					</div>
+				</div>
+			</div>
 		</section>
 		<article>
 			<header><h3>My Creations & Works</h3></header>

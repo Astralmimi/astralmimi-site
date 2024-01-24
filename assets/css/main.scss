@@ -32,17 +32,6 @@ a {
 	margin-bottom: 30px;
 }
 
-.avatar-card {
-	border: 5px solid var(--mars-color-border);
-	border-radius: var(--pico-border-radius);
-	width: fit-content;
-	padding: 5px;
-}
-
-.avatar-card:hover {
-	background-color: var(--mars-color-header);
-}
-
 header.container {
 	padding: 0;
 }
@@ -58,7 +47,8 @@ footer {
 }
 
 .showcase {
-	width: 400px;
+	max-width: 400px;
+	min-width: min-content;
 	height: 500px;
 	flex-shrink: 0;
 }
