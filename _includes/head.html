@@ -1,7 +1,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 {% if page.title %}<title>{{page.title}}</title>{% else %}<title>{{site.title}}</title>{% endif %}
-{% if page.icon %}<link rel="shortcut icon" href="{{ page.icon | relative_url }}" />{% else %}<link rel="shortcut icon" href="{{ site.icon | relative_url }}" />{% endif %}
+{% if page.favicon %}<link rel="shortcut icon" href="{{ page.favicon | relative_url }}" />{% else %}<link rel="shortcut icon" href="{{ site.favicon | relative_url }}" />{% endif %}
 <link rel="stylesheet" href="{{ '/assets/css/pico.min.css' | relative_url }}" />
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 <link rel="home" href="{{site.url}}">
@@ -11,8 +11,10 @@
 {% if page.og_image %}<meta property="og:image" content="{{ site.url | append: page.og_image}}" />{% else %}<meta property="og:image" content="{{ site.url | append: site.og_image}}" />{% endif %}
 {% if page.description %}<meta property="og:description" content="{{page.description}}" />{% else %}<meta property="og:description" content="{{site.description}}" />{% endif %}
 <meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="{{site.url}}">
+<meta property="twitter:url" content="{{ site.url | append: page.url }}">
+{% if page.title %}<meta property="twitter:title" content="{{page.title}}" />{% else %}<meta property="twitter:title" content="{{site.title}}" />{% endif %}
+{% if page.description %}<meta property="twitter:description" content="{{page.description}}" />{% else %}<meta property="twitter:description" content="{{site.description}}" />{% endif %}
+{% if page.og_image %}<meta property="twitter:image" content="{{ site.url | append: page.og_image}}" />{% else %}<meta property="twitter:image" content="{{ site.url | append: site.og_image}}" />{% endif %}
 <meta name="robots" content="index, follow, noai, noimageai">
-<meta property="og:see_also" content="https://astralmimi.gumroad.com" />
-<meta property="og:see_also" content="https://bsky.app/profile/astralmimi.art" />
-<meta property="og:see_also" content="https://mastodon.social/@Jellybeanyeen" />
-<meta property="og:see_also" content="https://twitter.com/JellyBeanYeen" />
+{% for link in site.meta_see_also %}<meta property="og:see_also" content="{{link}}" />{% endfor %}

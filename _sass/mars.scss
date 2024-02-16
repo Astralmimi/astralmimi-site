@@ -1,0 +1,56 @@
+
+@mixin row_base {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+@mixin col_base {
+	display: flex;
+	flex-direction: column;
+}
+@mixin center_flex {
+	justify-content: safe center;
+	align-content: center;
+}
+
+.row {
+	@include row_base;
+	@include center_flex;
+}
+
+.col {
+	@include col_base;
+	@include center_flex;
+}
+
+button, a[role=button] {
+	margin: 2.5px;
+	width: fit-content;
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-content: center;
+	img {
+		height: 1.4rem;
+		width: 1.4rem;
+	}
+}
+
+.big-button {
+	margin: 5px;
+	font-size: 1.5rem;
+	font-weight: 700;
+	img {
+		height: 2.2rem !important;
+		width: 2.2rem !important;
+	}
+}
+
+.row-scroll {
+	display: grid;
+	grid-auto-flow: column;
+	overflow-x: auto;
+	width: 100%;
+	justify-content: safe center;
+}

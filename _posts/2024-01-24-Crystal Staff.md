@@ -1,8 +1,15 @@
 ---
 layout: default
-title:  "Crystal Staff"
-date:   2024-01-23 23:20:30 +0100
-categories: product
-permalink: /:title
+title: Crystal Staff
+description: Crystal Staff asset to put on you VRChat Avatar
+categories: creations
+permalink: /:categories/:title
+favicon: assets/img/favicon.png
+preview: assets/img/crystal_staff/preview.png
+og_image: assets/img/crystal_staff/social_preview.png
 ---
-asdf
+# asdf
+## asdfasdfa
+asfdlkölkjaösdfjlköfsad
+**asdfasdf**
+*asdfasfd*

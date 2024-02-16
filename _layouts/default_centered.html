@@ -8,11 +8,9 @@
 <body style="text-align: center;">
 	{% include header.html %}
 
-	<main class="container" style="text-align: left;">
-		<div style="width: fit-content; margin-left: auto; margin-right: auto;">
-			<h1>{{page.title}}</h1>
-			{{ content }}
-		</div>
+	<main class="container">
+		<h1>{{page.title}}</h1>
+		{{ content }}
 	</main>
 
 	{% include footer.html %}

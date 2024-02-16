@@ -12,32 +12,32 @@ is_home: true
 
 	<main class="container">
 		<section class="grid">
-			<div class="card border">
+			<div class="col border" style="border-width: 5px; gap: 40px; margin: auto; height: 100%; padding: 10px; width: 100%;">
+				<img src="{{ '/assets/img/portrait.png' | relative_url }}" style="margin: 0 30px; width: 300px; margin: auto;">
 				<div>
-					<img src="{{ '/assets/img/portrait.png' | relative_url }}" style="height: 480px;">
 					<h1>Hi, I'm Astralmimi</h1>
-					<p>VR asset creator Artist</p>
+					<p>VR Asset Creator</p>
 					<p>ConFuzzled VR Portal Design Coordinator</p>
 					<p>Space Chicken</p>
 				</div>
 			</div>
-			<div class="card" style="display: flex; flex-direction: column; gap: 40px; margin: auto; justify-content: space-evenly; height: 100%; padding: 30px 0;">
+			<div class="col" style="gap: 40px; margin: auto; justify-content: space-evenly; height: 100%; padding: 30px 0;">
 				<div>
-					<h3>Buy my awesome stuff!</h3>
-					<div>
+					<h3>Shop</h3>
+					<div class="row">
 						<a role="button" class="big-button" href="https://astralmimi.gumroad.com">Gumroad</a>
 					</div>
 				</div>
 				<div>
 					<h3>Commissions</h3>
-					<p>
-						I do avatar retextures for as little as $1,000,000!<br>
-						Check my socials to see when i open!
-					</p>
+					<div class="row">
+						<a role="button" href="pages/commissions">Price List</a>
+						<a role="button" class="outline" href="pages/tos">ToS</a>
+					</div>
 				</div>
 				<div>
 					<h3>My Socials</h3>
-					<div>
+					<div class="row">
 						<a role="button" class="outline" href="https://bsky.app/profile/astralmimi.art">Bluesky</a>
 						<a role="button" class="outline" href="https://mastodon.social/@Jellybeanyeen">Mastodon</a>
 					</div>
@@ -46,17 +46,23 @@ is_home: true
 		</section>
 		<article>
 			<header><h3>My Creations & Works</h3></header>
-			<main class="grid grid-column-responsive" style="gap: 10px; margin: auto; width: fit-content; margin: auto;">
+			<main class="grid-column-responsive" style="gap: 10px; margin: auto;">
 				{% for post in site.posts %}
-					<div class="showcase border grid">
-						{% if post.is_page != false %}
-						<a href="{{post.url}}">
-							<h3>{{post.title}}</h3>
-						</a>
-						{% else %}
-						<h3>{{post.title}}</h3>
-						{% endif %}
-					</div>
+					{% if post.hidden != true %}
+						<div class="col showcase border {% if post.is_page != false %}showcase-link{% endif %}" style="width: 400px;">
+							{% if post.is_page != false %}
+							<a class="col" style="flex: 1;" href="{{post.url}}">
+								<div class="row" style="flex: 1;"><h4 style="margin-bottom: 0; padding: 20px 10px;">{{post.title}}</h4></div>
+								<img src="{{post.preview}}">
+							</a>
+							{% else %}
+							<div class="col" style="flex: 1;">
+								<div class="row" style="flex: 1;"><h4 style="margin-bottom: 0; padding: 20px 10px;">{{post.title}}</h4></div>
+								<img src="{{post.preview}}">
+							</div>
+							{% endif %}
+						</div>
+					{% endif %}
 				{% endfor %}
 			</main>
 
