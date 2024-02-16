@@ -48,21 +48,23 @@ is_home: true
 			<header><h3>My Creations & Works</h3></header>
 			<main class="grid-column-responsive" style="gap: 10px; margin: auto;">
 				{% for post in site.posts %}
-					{% if post.hidden != true %}
-						<div class="col showcase border {% if post.is_page != false %}showcase-link{% endif %}" style="width: 400px;">
-							{% if post.is_page != false %}
-							<a class="col" style="flex: 1;" href="{{post.url}}">
-								<div class="row" style="flex: 1;"><h4 style="margin-bottom: 0; padding: 20px 10px;">{{post.title}}</h4></div>
-								<img src="{{post.preview}}">
-							</a>
-							{% else %}
-							<div class="col" style="flex: 1;">
-								<div class="row" style="flex: 1;"><h4 style="margin-bottom: 0; padding: 20px 10px;">{{post.title}}</h4></div>
-								<img src="{{post.preview}}">
-							</div>
-							{% endif %}
+				{% if post.categories contains "creations" %}
+				{% if post.hidden != true %}
+					<div class="col showcase border {% if post.is_page != false %}showcase-link{% endif %}">
+						{% if post.is_page != false %}
+						<a class="col" style="flex: 1;" href="{{post.url}}">
+							<div class="row" style="flex: 1;"><h4 style="margin-bottom: 0; padding: 20px 10px;">{{post.title}}</h4></div>
+							<img src="{{post.preview}}" style="height: 380px;">
+						</a>
+						{% else %}
+						<div class="col" style="flex: 1;">
+							<div class="row" style="flex: 1;"><h4 style="margin-bottom: 0; padding: 20px 10px;">{{post.title}}</h4></div>
+							<img src="{{post.preview}}" style="height: 380px;">
 						</div>
-					{% endif %}
+						{% endif %}
+					</div>
+				{% endif %}
+				{% endif %}
 				{% endfor %}
 			</main>
 
