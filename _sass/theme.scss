@@ -45,6 +45,7 @@
 	body {
 		background: rgb(2,0,36);
 		background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(131,255,214,1) 0%, rgba(251,195,249,1) 100%);
+		min-height: 100vh;
 	}
 	
 	/*.card, article, article header {
