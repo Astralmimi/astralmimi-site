@@ -50,9 +50,14 @@ is_home: true
 				{% for post in site.posts %}
 				{% if post.categories contains "creations" %}
 				{% if post.hidden != true %}
-					<div class="col showcase border {% if post.is_page != false %}showcase-link{% endif %}">
+					<div class="col showcase border {% if post.is_page != false or post.target_link != nil %}showcase-link{% endif %}">
 						{% if post.is_page != false %}
 						<a class="col" style="flex: 1;" href="{{post.url}}">
+							<div class="row" style="flex: 1;"><h4 style="margin-bottom: 0; padding: 20px 10px;">{{post.title}}</h4></div>
+							<img src="{{post.preview}}" style="height: 380px;">
+						</a>
+						{% else if post.target_link != nil %}
+						<a class="col" style="flex: 1;" href="{{post.target_link}}">
 							<div class="row" style="flex: 1;"><h4 style="margin-bottom: 0; padding: 20px 10px;">{{post.title}}</h4></div>
 							<img src="{{post.preview}}" style="height: 380px;">
 						</a>
